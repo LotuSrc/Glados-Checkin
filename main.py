@@ -19,9 +19,9 @@ if __name__ == "__main__":
 
     response = requests.post(GLADOS_URL, json=data, headers=headers)
     print(response.status_code, response.json()["message"])
-    status_code, msg = response.status_code, response.json()["message"]
 
+    msg = response.json()["message"]
     dingtalk_token = os.environ.get('DINGTALK_TOKEN')
     if dingtalk_token:
-        ret = message.dingtalk(f"{status_code} {msg}", dingtalk_token)
+        ret = message.dingtalk(f"签到状态: {response.status_code} {msg}", dingtalk_token)
         print('send_dingtalk_message', ret)
