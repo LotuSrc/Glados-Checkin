@@ -1,0 +1,22 @@
+name: 'Glados-Checkin Action'
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 23 * * *'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - cookie: COOKIE
+            dingtalk_token: DINGTALK_TOKEN
+    steps:
+      - name: Working
+        uses: LotuSrc/glados-checkin@master
+        with:
+          cookie: ${{ secrets[matrix.cookie] }}
+          dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
