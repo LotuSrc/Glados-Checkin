@@ -16,7 +16,6 @@ jobs:
             dingtalk_token: DINGTALK_TOKEN
     steps:
       - name: Working
-        uses: LotuSrc/glados-checkin@master
         with:
           cookie: ${{ secrets[matrix.cookie] }}
           dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
