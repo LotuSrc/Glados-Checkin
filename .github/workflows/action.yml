@@ -20,3 +20,8 @@ jobs:
         with:
           cookie: ${{ secrets[matrix.cookie] }}
           dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
+        run: 
+          cd ${{ github.action_path }}
+          pip install -r ./requirements.txt
+          python3 ./hitcarder.py
+        shell: bash
