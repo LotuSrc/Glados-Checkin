@@ -23,5 +23,5 @@ jobs:
         run: 
           cd ${{ github.action_path }}
           pip install -r ./requirements.txt
-          python3 ./hitcarder.py
+          python3 ./main.py
         shell: bash
