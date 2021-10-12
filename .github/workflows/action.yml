@@ -20,7 +20,7 @@ jobs:
           COOKIE: ${{ secrets[matrix.cookie] }}
           DINGTALK_TOKEN: ${{ secrets[matrix.dingtalk_token] }}
         run: |
-          cd ${{ github.action_path }}
+          cd ${{ github.workspace }}
           pip install -r ./requirements.txt
           python3 ./main.py
         shell: bash
