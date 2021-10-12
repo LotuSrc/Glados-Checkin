@@ -16,11 +16,11 @@ jobs:
             dingtalk_token: DINGTALK_TOKEN
     steps:
       - name: Working
-        with:
-          cookie: ${{ secrets[matrix.cookie] }}
-          dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
         run: |
           cd ${{ github.action_path }}
           pip install -r ./requirements.txt
           python3 ./main.py
         shell: bash
+        with:
+          cookie: ${{ secrets[matrix.cookie] }}
+          dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
