@@ -19,7 +19,7 @@ jobs:
         with:
           cookie: ${{ secrets[matrix.cookie] }}
           dingtalk_token: ${{ secrets[matrix.dingtalk_token] }}
-        run: 
+        run: |
           cd ${{ github.action_path }}
           pip install -r ./requirements.txt
           python3 ./main.py
