@@ -16,7 +16,7 @@ jobs:
             dingtalk_token: DINGTALK_TOKEN
     steps:
       - name: Check out repository code
-        uses: LotuSrc/Glados-Checkin@master
+        uses: actions/checkout@v2
       - name: Working
         env:
           COOKIE: ${{ secrets[matrix.cookie] }}
