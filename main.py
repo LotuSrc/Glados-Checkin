@@ -18,6 +18,7 @@ if __name__ == "__main__":
     }
 
     response = requests.post(GLADOS_URL, json=data, headers=headers)
+    print(os.environ["COOKIE"])
     print(response.status_code)
     print(response.json())
     print(response.status_code, response.json()["message"])
