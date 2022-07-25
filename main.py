@@ -14,7 +14,7 @@ if __name__ == "__main__":
     }
 
     data = {
-        "token": "glados_network",
+        "token": "glados.network",
     }
 
     response = requests.post(GLADOS_URL, json=data, headers=headers)
